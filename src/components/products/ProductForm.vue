@@ -192,16 +192,21 @@ const clearError = () => {
   gap: 16px;
 }
 
-@media (max-width: 768px) {
-  .form-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
 .form-actions {
   display: flex;
   justify-content: flex-end;
   gap: 16px;
   margin-top: 12px;
+}
+
+@media (max-width: 768px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-actions {
+    flex-direction: column;
+    gap: 8px;
+  }
 }
 </style>

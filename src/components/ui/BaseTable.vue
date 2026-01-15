@@ -434,6 +434,14 @@ const handleClearFilters = () => {
   .range-text {
     font-size: 11px;
   }
+
+  .filter-item {
+    width: 100%;
+  }
+
+  .search-input {
+    width: 100%;
+  }
 }
 
 .nav-buttons {
