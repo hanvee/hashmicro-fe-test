@@ -25,14 +25,34 @@ const crumbs = computed(() => {
 
   const items = []
   let currentPath = ''
+  
   for (const segment of segments) {
     currentPath += `/${segment}`
+    // Skip dynamic segments (like :id)
+    if (segment.match(/^\d+$/)) continue
+    
     // Find route definition for this path
-    const found = router.getRoutes().find((r) => r.path === currentPath)
+    const routes = router.getRoutes()
+    let found = routes.find((r) => r.path === currentPath)
+    
+    // If not found, try to match with dynamic route
+    if (!found) {
+      found = routes.find((r) => {
+        const pattern = r.path.replace(/:\w+/g, '\\d+')
+        const regex = new RegExp(`^${pattern}$`)
+        return regex.test(path)
+      })
+      
+      // Use the current accumulated path for matching
+      if (found && found.path.includes(':')) {
+        currentPath = path
+      }
+    }
+    
     if (found && found.meta && (found.meta.breadcrumb || found.meta.title)) {
       items.push({
         name: found.meta.breadcrumb || found.meta.title,
-        path: found.path,
+        path: found.path.includes(':') ? route.path : found.path,
         isLast: currentPath === route.path,
       })
     }

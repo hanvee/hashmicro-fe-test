@@ -23,7 +23,11 @@ const router = createRouter({
       path: '/products/:id/edit',
       name: 'product-edit',
       component: () => import('../views/ProductEdit.vue'),
-      meta: { title: 'Edit Product', breadcrumb: 'Edit Product' },
+      meta: { 
+        title: 'Edit Product', 
+        breadcrumb: 'Edit Product',
+        parentPath: '/products'
+      },
     },
   ],
 })
