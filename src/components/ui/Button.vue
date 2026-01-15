@@ -20,6 +20,7 @@ const props = withDefaults(
     href?: string
     to?: string
     block?: boolean
+    type?: 'button' | 'submit' | 'reset'
   }>(),
   {
     variant: 'primary',
@@ -27,6 +28,7 @@ const props = withDefaults(
     disabled: false,
     isLoading: false,
     block: false,
+    type: 'button',
   },
 )
 
@@ -70,6 +72,7 @@ const spinnerVariant = computed(() => {
     :is="componentTag"
     :href="href"
     :to="to"
+    :type="componentTag === 'button' ? type : undefined"
     :class="classes"
     :disabled="(disabled || isLoading) && componentTag === 'button'"
   >
