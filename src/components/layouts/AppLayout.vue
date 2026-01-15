@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { AppHeader } from '@/components/layouts'
-import Breadcrumb from '@/components/ui/Breadcrumb.vue'
+import { Breadcrumb, Toast } from '@/components/ui'
 </script>
 
 <template>
@@ -13,6 +13,8 @@ import Breadcrumb from '@/components/ui/Breadcrumb.vue'
         <slot></slot>
       </div>
     </main>
+    
+    <Toast />
   </div>
 </template>
 

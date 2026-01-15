@@ -1,18 +1,22 @@
 <script setup lang="ts">
 import { ProductForm } from '@/components/products'
 import { useProductsStore } from '@/stores/useProducts'
+import { useToast } from '@/composables/useToast'
 import { useRouter } from 'vue-router'
 import type { IProductRequest } from '@/types/models/productModels'
 
 const router = useRouter()
 const productStore = useProductsStore()
+const toast = useToast()
 
 const handleSubmit = async (data: IProductRequest): Promise<void> => {
   try {
     await productStore.addProduct(data)
+    toast.success('Product created successfully')
     router.push('/products')
   } catch (error) {
     console.error('Error saving product:', error)
+    toast.error('Failed to create product')
   }
 }
 

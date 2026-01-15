@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ProductForm } from '@/components/products'
 import { useProductsStore } from '@/stores/useProducts'
+import { useToast } from '@/composables/useToast'
 import { computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import type { IProductRequest } from '@/types/models/productModels'
@@ -8,6 +9,7 @@ import type { IProductRequest } from '@/types/models/productModels'
 const route = useRoute()
 const router = useRouter()
 const productStore = useProductsStore()
+const toast = useToast()
 
 const productId = computed(() => Number(route.params.id))
 
@@ -21,9 +23,11 @@ const initialData = computed(() => {
 const handleSubmit = async (data: IProductRequest): Promise<void> => {
   try {
     await productStore.updateProduct({ ...data, id: productId.value })
+    toast.success('Product updated successfully')
     router.push('/products')
   } catch (error) {
     console.error('Error saving product:', error)
+    toast.error('Failed to update product')
   }
 }
 

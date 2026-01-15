@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ProductTable } from '@/components/products'
 import { useProductsStore } from '@/stores/useProducts'
+import { useToast } from '@/composables/useToast'
 import { onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { Button } from '@/components/ui'
@@ -9,6 +10,7 @@ import ConfirmationDialog from '@/components/ui/ConfirmationDialog.vue'
 
 const productStore = useProductsStore()
 const router = useRouter()
+const toast = useToast()
 
 onMounted(() => {
   if (productStore.products.length === 0) {
@@ -29,6 +31,7 @@ const confirmDelete = async () => {
     await productStore.deleteProduct(productToDelete.value)
     isDeleteModalOpen.value = false
     productToDelete.value = null
+    toast.success('Product deleted successfully')
   }
 }
 
@@ -86,5 +89,18 @@ const goToCreate = () => {
 .btn-create-icon {
   width: 18px;
   height: 18px;
+}
+
+@media (max-width: 768px) {
+  .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .btn-create {
+    width: 100%;
+    justify-content: center;
+  }
 }
 </style>
