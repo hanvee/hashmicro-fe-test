@@ -1,0 +1,461 @@
+[
+  {
+    "id": 1,
+    "name": "Laptop Dell Latitude 5420",
+    "sku": "DL-5420",
+    "category": "Electronics",
+    "price": 17500000,
+    "status": "active",
+    "imageUrl": "https://placehold.co/400"
+  },
+  {
+    "id": 2,
+    "name": "MacBook Pro M1 14\"",
+    "sku": "MBP-M1-14",
+    "category": "Electronics",
+    "price": 28500000,
+    "status": "active",
+    "imageUrl": "https://placehold.co/400"
+  },
+  {
+    "id": 3,
+    "name": "HP LaserJet Pro M404dn",
+    "sku": "HP-LJ-404",
+    "category": "Office Equipment",
+    "price": 5200000,
+    "status": "active",
+    "imageUrl": "https://placehold.co/400"
+  },
+  {
+    "id": 4,
+    "name": "Epson L3210 Printer",
+    "sku": "EPS-L3210",
+    "category": "Office Equipment",
+    "price": 2800000,
+    "status": "inactive",
+    "imageUrl": "https://placehold.co/400"
+  },
+  {
+    "id": 5,
+    "name": "Office Desk Minimalist",
+    "sku": "DSK-MIN-01",
+    "category": "Furniture",
+    "price": 3200000,
+    "status": "active",
+    "imageUrl": "https://placehold.co/400"
+  },
+
+  {
+    "id": 6,
+    "name": "Ergonomic Office Chair",
+    "sku": "CHR-ERG-02",
+    "category": "Furniture",
+    "price": 2500000,
+    "status": "active",
+    "imageUrl": "https://placehold.co/400"
+  },
+  {
+    "id": 7,
+    "name": "Standing Desk Electric",
+    "sku": "DSK-STD-01",
+    "category": "Furniture",
+    "price": 7800000,
+    "status": "inactive",
+    "imageUrl": "https://placehold.co/400"
+  },
+  {
+    "id": 8,
+    "name": "Samsung 27\" Monitor",
+    "sku": "SM-MON-27",
+    "category": "Electronics",
+    "price": 4200000,
+    "status": "active",
+    "imageUrl": "https://placehold.co/400"
+  },
+  {
+    "id": 9,
+    "name": "Logitech MX Master 3 Mouse",
+    "sku": "LOG-MXM-3",
+    "category": "Accessories",
+    "price": 1450000,
+    "status": "active",
+    "imageUrl": "https://placehold.co/400"
+  },
+  {
+    "id": 10,
+    "name": "Keychron K6 Mechanical Keyboard",
+    "sku": "KEY-K6",
+    "category": "Accessories",
+    "price": 1650000,
+    "status": "active",
+    "imageUrl": "https://placehold.co/400"
+  },
+
+  {
+    "id": 11,
+    "name": "Cisco Small Business Switch 24 Port",
+    "sku": "CS-SW-24",
+    "category": "Networking",
+    "price": 6800000,
+    "status": "active",
+    "imageUrl": "https://placehold.co/400"
+  },
+  {
+    "id": 12,
+    "name": "Ubiquiti UniFi Access Point",
+    "sku": "UB-AP-AC",
+    "category": "Networking",
+    "price": 2100000,
+    "status": "active",
+    "imageUrl": "https://placehold.co/400"
+  },
+  {
+    "id": 13,
+    "name": "Synology NAS DS220+",
+    "sku": "SYN-DS220",
+    "category": "Server & Storage",
+    "price": 6500000,
+    "status": "inactive",
+    "imageUrl": "https://placehold.co/400"
+  },
+  {
+    "id": 14,
+    "name": "Seagate IronWolf 4TB HDD",
+    "sku": "SG-IW-4TB",
+    "category": "Server & Storage",
+    "price": 2450000,
+    "status": "active",
+    "imageUrl": "https://placehold.co/400"
+  },
+  {
+    "id": 15,
+    "name": "APC UPS 1500VA",
+    "sku": "APC-UPS-15",
+    "category": "Power Equipment",
+    "price": 7200000,
+    "status": "active",
+    "imageUrl": "https://placehold.co/400"
+  },
+
+  {
+    "id": 16,
+    "name": "Projector Epson EB-X51",
+    "sku": "EPS-PRO-X51",
+    "category": "Office Equipment",
+    "price": 6900000,
+    "status": "inactive",
+    "imageUrl": "https://placehold.co/400"
+  },
+  {
+    "id": 17,
+    "name": "Jabra Conference Speakerphone",
+    "sku": "JAB-SPK-01",
+    "category": "Accessories",
+    "price": 4800000,
+    "status": "active",
+    "imageUrl": "https://placehold.co/400"
+  },
+  {
+    "id": 18,
+    "name": "Meeting Room LED TV 55\"",
+    "sku": "LED-55-MTG",
+    "category": "Electronics",
+    "price": 8900000,
+    "status": "active",
+    "imageUrl": "https://placehold.co/400"
+  },
+  {
+    "id": 19,
+    "name": "Magnetic Whiteboard 120x90",
+    "sku": "WB-MAG-120",
+    "category": "Office Supplies",
+    "price": 950000,
+    "status": "active",
+    "imageUrl": "https://placehold.co/400"
+  },
+  {
+    "id": 20,
+    "name": "Paper Shredder OfficePro",
+    "sku": "SHR-OP-01",
+    "category": "Office Equipment",
+    "price": 3100000,
+    "status": "inactive",
+    "imageUrl": "https://placehold.co/400"
+  },
+
+  {
+    "id": 21,
+    "name": "Canon DSLR EOS 90D",
+    "sku": "CAN-90D",
+    "category": "Electronics",
+    "price": 18500000,
+    "status": "active",
+    "imageUrl": "https://placehold.co/400"
+  },
+  {
+    "id": 22,
+    "name": "Tripod Professional",
+    "sku": "TRI-PRO-01",
+    "category": "Accessories",
+    "price": 850000,
+    "status": "active",
+    "imageUrl": "https://placehold.co/400"
+  },
+  {
+    "id": 23,
+    "name": "External SSD Samsung T7 1TB",
+    "sku": "SSD-T7-1T",
+    "category": "Storage",
+    "price": 2300000,
+    "status": "active",
+    "imageUrl": "https://placehold.co/400"
+  },
+  {
+    "id": 24,
+    "name": "Microsoft Surface Pro 9",
+    "sku": "MS-SP9",
+    "category": "Electronics",
+    "price": 26500000,
+    "status": "inactive",
+    "imageUrl": "https://placehold.co/400"
+  },
+  {
+    "id": 25,
+    "name": "Wireless Presentation Clicker",
+    "sku": "PRS-CLK-01",
+    "category": "Accessories",
+    "price": 650000,
+    "status": "active",
+    "imageUrl": "https://placehold.co/400"
+  },
+
+  {
+    "id": 26,
+    "name": "Barcode Scanner Honeywell",
+    "sku": "BC-HNY-01",
+    "category": "Office Equipment",
+    "price": 1750000,
+    "status": "active",
+    "imageUrl": "https://placehold.co/400"
+  },
+  {
+    "id": 27,
+    "name": "POS Thermal Printer",
+    "sku": "POS-TH-80",
+    "category": "Office Equipment",
+    "price": 2200000,
+    "status": "inactive",
+    "imageUrl": "https://placehold.co/400"
+  },
+  {
+    "id": 28,
+    "name": "Industrial Label Printer",
+    "sku": "LBL-IND-01",
+    "category": "Office Equipment",
+    "price": 5600000,
+    "status": "active",
+    "imageUrl": "https://placehold.co/400"
+  },
+  {
+    "id": 29,
+    "name": "Document Scanner Fujitsu",
+    "sku": "SC-FJ-01",
+    "category": "Office Equipment",
+    "price": 4900000,
+    "status": "active",
+    "imageUrl": "https://placehold.co/400"
+  },
+  {
+    "id": 30,
+    "name": "Rack Server Cabinet 20U",
+    "sku": "RCK-20U",
+    "category": "Server & Storage",
+    "price": 8700000,
+    "status": "inactive",
+    "imageUrl": "https://placehold.co/400"
+  },
+
+  {
+    "id": 31,
+    "name": "Network Firewall Fortinet",
+    "sku": "FW-FRT-01",
+    "category": "Networking",
+    "price": 12500000,
+    "status": "active",
+    "imageUrl": "https://placehold.co/400"
+  },
+  {
+    "id": 32,
+    "name": "IP Phone Cisco",
+    "sku": "IP-CS-01",
+    "category": "Networking",
+    "price": 2300000,
+    "status": "active",
+    "imageUrl": "https://placehold.co/400"
+  },
+  {
+    "id": 33,
+    "name": "VOIP Gateway",
+    "sku": "VOIP-GW-01",
+    "category": "Networking",
+    "price": 5400000,
+    "status": "inactive",
+    "imageUrl": "https://placehold.co/400"
+  },
+  {
+    "id": 34,
+    "name": "Security CCTV Dome Camera",
+    "sku": "CCTV-DM-01",
+    "category": "Security",
+    "price": 1850000,
+    "status": "active",
+    "imageUrl": "https://placehold.co/400"
+  },
+  {
+    "id": 35,
+    "name": "NVR CCTV Recorder",
+    "sku": "NVR-16CH",
+    "category": "Security",
+    "price": 6200000,
+    "status": "active",
+    "imageUrl": "https://placehold.co/400"
+  },
+
+  {
+    "id": 36,
+    "name": "Smart Door Access Control",
+    "sku": "ACC-DR-01",
+    "category": "Security",
+    "price": 4100000,
+    "status": "inactive",
+    "imageUrl": "https://placehold.co/400"
+  },
+  {
+    "id": 37,
+    "name": "Fingerprint Attendance Machine",
+    "sku": "ATT-FP-01",
+    "category": "Security",
+    "price": 2750000,
+    "status": "active",
+    "imageUrl": "https://placehold.co/400"
+  },
+  {
+    "id": 38,
+    "name": "Server Dell PowerEdge T40",
+    "sku": "DL-T40",
+    "category": "Server & Storage",
+    "price": 9800000,
+    "status": "active",
+    "imageUrl": "https://placehold.co/400"
+  },
+  {
+    "id": 39,
+    "name": "Server RAM 32GB ECC",
+    "sku": "RAM-32ECC",
+    "category": "Server & Storage",
+    "price": 3650000,
+    "status": "active",
+    "imageUrl": "https://placehold.co/400"
+  },
+  {
+    "id": 40,
+    "name": "Rack Mount PDU",
+    "sku": "PDU-RCK-01",
+    "category": "Power Equipment",
+    "price": 1950000,
+    "status": "inactive",
+    "imageUrl": "https://placehold.co/400"
+  },
+
+  {
+    "id": 41,
+    "name": "HDMI Conference Cable 15m",
+    "sku": "HDMI-15M",
+    "category": "Accessories",
+    "price": 450000,
+    "status": "active",
+    "imageUrl": "https://placehold.co/400"
+  },
+  {
+    "id": 42,
+    "name": "Wireless Router TP-Link AX3000",
+    "sku": "TPL-AX3K",
+    "category": "Networking",
+    "price": 1850000,
+    "status": "active",
+    "imageUrl": "https://placehold.co/400"
+  },
+  {
+    "id": 43,
+    "name": "Laptop Backpack Business",
+    "sku": "BAG-BIZ-01",
+    "category": "Accessories",
+    "price": 650000,
+    "status": "active",
+    "imageUrl": "https://placehold.co/400"
+  },
+  {
+    "id": 44,
+    "name": "USB-C Docking Station",
+    "sku": "DOCK-USBC",
+    "category": "Accessories",
+    "price": 2950000,
+    "status": "inactive",
+    "imageUrl": "https://placehold.co/400"
+  },
+  {
+    "id": 45,
+    "name": "Portable Projector Mini",
+    "sku": "PRO-MINI-01",
+    "category": "Electronics",
+    "price": 4200000,
+    "status": "active",
+    "imageUrl": "https://placehold.co/400"
+  },
+
+  {
+    "id": 46,
+    "name": "Wireless Headset Jabra Evolve",
+    "sku": "JAB-EVL-01",
+    "category": "Accessories",
+    "price": 3850000,
+    "status": "active",
+    "imageUrl": "https://placehold.co/400"
+  },
+  {
+    "id": 47,
+    "name": "Noise Cancelling Headphone Sony",
+    "sku": "SON-NC-01",
+    "category": "Electronics",
+    "price": 4750000,
+    "status": "inactive",
+    "imageUrl": "https://placehold.co/400"
+  },
+  {
+    "id": 48,
+    "name": "Office Filing Cabinet",
+    "sku": "CAB-FILE-01",
+    "category": "Furniture",
+    "price": 5200000,
+    "status": "active",
+    "imageUrl": "https://placehold.co/400"
+  },
+  {
+    "id": 49,
+    "name": "Meeting Room Table 10 Seater",
+    "sku": "MTG-TBL-10",
+    "category": "Furniture",
+    "price": 14500000,
+    "status": "active",
+    "imageUrl": "https://placehold.co/400"
+  },
+  {
+    "id": 50,
+    "name": "Reception Desk Modern",
+    "sku": "RCP-DSK-01",
+    "category": "Furniture",
+    "price": 8600000,
+    "status": "inactive",
+    "imageUrl": "https://placehold.co/400"
+  }
+]
