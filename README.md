@@ -307,6 +307,12 @@ Flexible button component with:
 
 ### useProductsStore (Pinia)
 
+The product store uses a clean, composable data pipeline that transforms data through multiple stages:
+
+```
+products → searchedProducts → filteredProducts → sortedProducts → paginatedProducts
+```
+
 **State:**
 - `products`: Array of all products
 - `searchQuery`: Global search term
@@ -315,18 +321,30 @@ Flexible button component with:
 - `activeFilters`: Active filter values
 - Loading states: `isLoading`, `isCreating`, `isUpdating`, `isDeleting`
 
-**Computed:**
-- `filteredProducts`: Products after search and filters
-- `paginatedProducts`: Current page items
-- `totalItems`, `totalPages`: Pagination metadata
+**Computed Properties (Data Pipeline):**
+- `searchedProducts`: Products filtered by search query
+- `filteredProducts`: Searched products filtered by active filters
+- `sortedProducts`: Filtered products sorted by current sort configuration
+- `paginatedProducts`: Sorted products sliced for current page
+- `totalItems`: Total count of sorted products
+- `totalPages`: Total number of pages based on items per page
+
+**Helper Functions:**
+- `matchesSearch(product, query)`: Check if product matches search query
+- `matchesFilters(product, filters)`: Check if product matches all active filters
+- `compareProducts(a, b, field)`: Compare two products by a specific field
 
 **Actions:**
-- `fetchProducts()`: Load initial data
+- `fetchProducts()`: Load initial data from JSON
 - `addProduct(product)`: Create new product
 - `updateProduct(product)`: Update existing product
-- `deleteProduct(id)`: Remove product
-- `setPage(page)`, `setSearch(query)`, `setSort(field)`, `setFilter(key, value)`: UI state updates
-- `clearFilter()`: Reset all filters
+- `deleteProduct(id)`: Remove product and adjust pagination
+- `setPage(page)`: Navigate to specific page
+- `setSearch(query)`: Update search query and reset to page 1
+- `setSort(field)`: Toggle sort order or change sort field
+- `setFilter(key, value)`: Set or remove a filter and reset to page 1
+- `clearFilter()`: Remove all filters and reset to page 1
+
 
 ## 🎨 Styling
 

@@ -1,6 +1,7 @@
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
 import type { IProduct, IProductRequest } from '@/types/models/productModels'
+import { matchesSearch, matchesFilters, compareProducts } from '@/helpers'
 import productData from '@/data/productData.json'
 
 export const useProductsStore = defineStore('products', () => {
@@ -18,57 +19,40 @@ export const useProductsStore = defineStore('products', () => {
   const sortOrder = ref<'asc' | 'desc'>('desc')
   const activeFilters = ref<Record<string, string>>({})
 
-  const filteredProducts = computed(() => {
-    let result = [...products.value]
-
-    // Search
-    if (searchQuery.value) {
-      const query = searchQuery.value.toLowerCase()
-      result = result.filter(
-        (p) => p.name.toLowerCase().includes(query) || p.sku.toLowerCase().includes(query),
-      )
-    }
-
-    // Filters
-    result = result.filter((p) =>
-      Object.entries(activeFilters.value).every(
-        ([key, value]) => !value || p[key as keyof IProduct] === value,
-      ),
-    )
-
-    // Sorting
-    if (sortBy.value) {
-      const key = sortBy.value as keyof IProduct
-      const order = sortOrder.value === 'asc' ? 1 : -1
-
-      result.sort((a, b) => {
-        const valA = a[key]
-        const valB = b[key]
-
-        if (valA == null && valB == null) return 0
-        if (valA == null) return 1
-        if (valB == null) return -1
-
-        if (valA < valB) return -order
-        if (valA > valB) return order
-        return 0
-      })
-    }
-
-    return result
+  // --- Computed Properties ---
+  const searchedProducts = computed(() => {
+    if (!searchQuery.value) return products.value
+    return products.value.filter((product) => matchesSearch(product, searchQuery.value))
   })
 
-  const totalPages = computed(() => {
-    return Math.ceil(filteredProducts.value.length / itemsPerPage.value)
+  const filteredProducts = computed(() => {
+    if (Object.keys(activeFilters.value).length === 0) return searchedProducts.value
+    return searchedProducts.value.filter((product) => matchesFilters(product, activeFilters.value))
+  })
+
+  const sortedProducts = computed(() => {
+    if (!sortBy.value) return filteredProducts.value
+
+    const field = sortBy.value as keyof IProduct
+    const multiplier = sortOrder.value === 'asc' ? 1 : -1
+
+    return [...filteredProducts.value].sort((a, b) => {
+      return compareProducts(a, b, field) * multiplier
+    })
   })
 
   const paginatedProducts = computed(() => {
-    const start = (currentPage.value - 1) * itemsPerPage.value
-    const end = start + itemsPerPage.value
-    return filteredProducts.value.slice(start, end)
+    const startIndex = (currentPage.value - 1) * itemsPerPage.value
+    const endIndex = startIndex + itemsPerPage.value
+    return sortedProducts.value.slice(startIndex, endIndex)
   })
 
-  const totalItems = computed(() => filteredProducts.value.length)
+  const totalItems = computed(() => sortedProducts.value.length)
+
+  const totalPages = computed(() => {
+    if (totalItems.value === 0) return 0
+    return Math.ceil(totalItems.value / itemsPerPage.value)
+  })
 
   // --- Actions ---
   const fetchProducts = async () => {
@@ -114,6 +98,8 @@ export const useProductsStore = defineStore('products', () => {
       // simulate delay
       await new Promise((resolve) => setTimeout(resolve, 1000))
       products.value = products.value.filter((p) => p.id !== id)
+
+      // Adjust page if current page is now empty
       if (paginatedProducts.value.length === 0 && currentPage.value > 1) {
         currentPage.value--
       }
@@ -123,7 +109,8 @@ export const useProductsStore = defineStore('products', () => {
   }
 
   const setPage = (page: number) => {
-    if (page >= 1 && page <= totalPages.value) {
+    const maxPage = totalPages.value || 1
+    if (page >= 1 && page <= maxPage) {
       currentPage.value = page
     }
   }
@@ -142,11 +129,10 @@ export const useProductsStore = defineStore('products', () => {
     }
   }
 
-  const setFilter = (key: string, value: any) => {
+  const setFilter = (key: string, value: string) => {
     if (!value) {
-      const newFilters = { ...activeFilters.value }
-      delete newFilters[key]
-      activeFilters.value = newFilters
+      const { [key]: removed, ...remaining } = activeFilters.value
+      activeFilters.value = remaining
     } else {
       activeFilters.value = { ...activeFilters.value, [key]: value }
     }
@@ -155,6 +141,7 @@ export const useProductsStore = defineStore('products', () => {
 
   const clearFilter = () => {
     activeFilters.value = {}
+    currentPage.value = 1
   }
 
   return {
@@ -169,7 +156,9 @@ export const useProductsStore = defineStore('products', () => {
     sortBy,
     sortOrder,
     activeFilters,
+    searchedProducts,
     filteredProducts,
+    sortedProducts,
     totalItems,
     totalPages,
     paginatedProducts,
